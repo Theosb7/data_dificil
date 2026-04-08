@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Pior Seleção de Data de Nascimento</title>
+    <link rel="stylesheet" href="style_data.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>insira sua data de nascimento com muito cuidado</h1>
+
+        <!-- Dia: Tente a sorte se eles não fugirem -->
+        <div class="form-group">
+            <label>Dia da Sorte:</label>
+            <div id="dia-grid" class="dia-grid">
+                <!-- Injetado via JS -->
+            </div>
+            <input type="hidden" id="dia" value="">
+        </div>
+
+        <!-- Mês: Select que embaralha -->
+        <div class="form-group">
+            <label id="mes-label" for="mes">Mês correspondente:</label>
+            <select id="mes">
+                <!-- Preenchido via JS -->
+            </select>
+            <span style="font-size: 10px;">(Pode estar correndo)</span>
+        </div>
+
+        <!-- Ano: Caótico com botões lentos -->
+        <div class="form-group">
+            <label for="ano">Aqui o que as teclas fazem é um mistério:</label>
+            <div class="ano-controls">
+                <input type="text" id="ano" placeholder="Sorteia..." maxlength="4">
+                <button type="button" id="btn-incrementar-ano">Adicionar +1 Ano</button>
+            </div>
+        </div>
+
+        <!-- Salvar -->
+        <div style="margin-top: 30px; text-align: center;">
+            <p style="font-size: 11px; color: darkred; background: #fff; padding: 5px; border-radius: 5px;">
+                <b>Aviso para o professor:</b> O botão abaixo é gigante, mas é blindado. Há apenas um buraquinho de 20x20 pixels em um local aleatório dele capaz de reconhecer o clique "Salvar Data". Se errar o ponto, a brecha muda de lugar. Boa caça!
+            </p>
+            <button type="button" id="btn-salvar">Salvar Data</button>
+        </div>
+    </div>
+
+    <!-- Mensagem de sucesso (com sarcasmo) -->
+    <div id="mensagem"></div>
+
+    <script src="db_data.js"></script>
+    <script src="controller_data.js"></script>
+</body>
+
+</html>
